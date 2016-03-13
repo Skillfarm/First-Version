@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 use App\Task;
 use App\Repositories\TaskRepository;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -74,7 +75,6 @@ class TaskController extends Controller
     public function destroy(Request $request, Task $task)
     {
         $this->authorize('destroy', $task);
-
         $task->delete();
 
         return redirect('/tasks');

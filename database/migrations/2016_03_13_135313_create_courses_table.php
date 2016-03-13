@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTasksTable extends Migration
+class CreateCoursesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,14 @@ class CreateTasksTable extends Migration
      */
     public function up()
     {
-        Schema::create('tasks', function (Blueprint $table) {
+        Schema::create('courses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->index();
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
             $table->string('name');
+            $table->integer('department_id')->index();
+            $table->foreign('department_id')
+                ->references('id')
+                ->on('departments')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateTasksTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tasks');
+        Schema::drop('courses');
     }
 }
