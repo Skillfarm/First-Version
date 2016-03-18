@@ -58,8 +58,8 @@ class TaskController extends Controller
             'name' => 'required|max:255',
         ]);
 
-        $request->user()->tasks()->create([
-            'name' => $request->name,
+        $request->user()->works()->create([
+            'subject' => $request->name,
         ]);
 
         return redirect('/tasks');
