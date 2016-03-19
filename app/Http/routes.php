@@ -33,10 +33,33 @@ Route::group(['middleware' => ['web']], function () {
     Route::delete('/task/{task}', 'TaskController@destroy');
     Route::auth();
 
-    Route::post('/department/{department}','controller@method');//TO DO
-    Route::post('/course/{course}','controller@method');//TO DO
-    Route::post('/postwork','controller@method');//TO DO
-    Route::post('/work/{work}','controller@method');//TO DO
+    Route::get('/');
+    ///homepage
+    Route::get('/department/{department}','controller@method');//TO DO
+    Route::get('/course/{course}','controller@method');//TO DO
+    Route::get('/addwork','controller@method');//TO DO
+    //dep or course
+    Route::get('/work/{workid}','controller@method');//TO DO
+    Route::get('/profile/{profile}','controller@method');
+
+    //add work
+    Route::post('/addwork','controller@method');
+    //request page
+    Route::post('/addrequest','controller@method');
+    //profile page
+    Route::get('/doneworks}','controller@method');
+    Route::get('/activeworks}','controller@method');
+    /*
+     * blade file:
+     * homepage;
+     * dep page or course;
+     * add work page;
+     * request page;
+     * profile page
+     * register page
+     *
+     */
+
 
 
 });
