@@ -39,13 +39,13 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/course/{course}','controller@method');//TO DO
     Route::get('/addwork','controller@method');//TO DO
     //dep or course
-    Route::get('/work/{workid}','controller@method');//TO DO
+    Route::get('/work/{workid}','controller@method');//
     Route::get('/profile/{profile}','controller@method');
 
     //add work
     Route::post('/addwork','controller@method');
     //request page
-    Route::post('/addrequest','controller@method');
+    Route::post('/addacceptance','controller@method');
     //profile page
     Route::get('/doneworks}','controller@method');
     Route::get('/activeworks}','controller@method');
@@ -54,7 +54,7 @@ Route::group(['middleware' => ['web']], function () {
      * homepage;
      * dep page or course;
      * add work page;
-     * request page;
+     * work page;
      * profile page
      * register page
      *
