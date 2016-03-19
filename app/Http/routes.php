@@ -44,7 +44,7 @@ Route::group(['middleware' => ['web']], function () {
 
     //add work
     Route::post('/addwork','controller@method');
-    //request page
+    //work page
     Route::post('/addacceptance','controller@method');
     //profile page
     Route::get('/doneworks}','controller@method');
@@ -59,7 +59,4 @@ Route::group(['middleware' => ['web']], function () {
      * register page
      *
      */
-
-
-
 });
