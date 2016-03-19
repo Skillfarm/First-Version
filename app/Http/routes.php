@@ -49,6 +49,10 @@ Route::group(['middleware' => ['web']], function () {
     //profile page
     Route::get('/doneworks}','controller@method');
     Route::get('/activeworks}','controller@method');
+    //profile page other user
+    Route::post('/profile','controller@method');
+    Route::post('/doneworks}','controller@method');
+    Route::post('/activeworks}','controller@method');
     /*
      * blade file:
      * homepage;
