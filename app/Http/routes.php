@@ -35,24 +35,21 @@ Route::group(['middleware' => ['web']], function () {
 
     //Route::get('/');
     ///homepage
-    Route::get('/department/{department}','controller@method');//TO DO
-    Route::get('/course/{course}','controller@method');//TO DO
-    Route::get('/addwork','controller@method');//TO DO
+    Route::get('/department/{department}','base@getdeptpage');//TO DO
+    Route::get('/course/{course}','base@getcoursepage');//TO DO
+    Route::get('/addwork','work@getaddworkpage');//TO DO
     //dep or course
-    Route::get('/work/{workid}','controller@method');//
-    Route::get('/profile/{profile}','controller@method');
+    Route::get('/work/{workid}','work@getworkpage');//
+    Route::post('/profile/','profile@getprofilepage');
 
     //add work
-    Route::post('/addwork','controller@method');
+    Route::post('/addwork','work@addwork');
     //work page
-    Route::post('/addacceptance','controller@method');
+    Route::post('/addacceptance','work@addacceptance');
     //profile page
-    Route::get('/doneworks}','controller@method');
-    Route::get('/activeworks}','controller@method');
-    //profile page other user
-    Route::post('/profile','controller@method');
-    Route::post('/doneworks}','controller@method');
-    Route::post('/activeworks}','controller@method');
+    Route::get('/doneworks}','profile@doneworks');
+    Route::get('/activeworks}','profile@activeworks');
+
     /*
      * blade file:
      * homepage;
@@ -62,5 +59,12 @@ Route::group(['middleware' => ['web']], function () {
      * profile page
      * register page
      *
+     */
+    /*
+     * controller :
+     * user
+     * profile
+     * work
+     * base
      */
 });
