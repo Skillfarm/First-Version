@@ -33,7 +33,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::delete('/task/{task}', 'TaskController@destroy');
     Route::auth();
 
-    Route::get('/');
+    //Route::get('/');
     ///homepage
     Route::get('/department/{department}','controller@method');//TO DO
     Route::get('/course/{course}','controller@method');//TO DO
