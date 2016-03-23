@@ -23,10 +23,10 @@ class CreateWorksTable extends Migration
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            $table->integer('department_id')->index();
-            $table->foreign('department_id')
+            $table->integer('course_id')->index();
+            $table->foreign('course_id')
                 ->references('id')
-                ->on('departments')
+                ->on('courses')
                 ->onDelete('cascade');
             $table->timestamps();
         });

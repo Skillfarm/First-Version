@@ -14,6 +14,10 @@ class Course extends Model
     {
         return $this->belongsTo('App\Department');
     }
+    public function works()
+    {
+        return $this->hasMany(Work::class);
+    }
     public function user()
     {
         return $this->belongsToMany('App\User');
