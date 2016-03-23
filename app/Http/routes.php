@@ -42,7 +42,6 @@ Route::group(['middleware' => ['web']], function () {
     //dep or course
     Route::get('/work/{workid}','work@getworkpage');//
     Route::post('/profile/','profile@getprofilepage');
-
     //add work
     Route::post('/addwork','work@addwork');
     //work page
