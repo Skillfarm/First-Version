@@ -14,8 +14,9 @@ class Department extends Model
     {
         return $this->hasMany('App\Course');
     }
-    public function work()
+
+    public function  works()
     {
-        return $this->hasMany('App\Work');
+        return $this->hasManyThrough('App\Course','App\Work');
     }
 }

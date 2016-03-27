@@ -44,4 +44,8 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Course');
     }
+    public function  departments()
+    {
+        return $this->hasManyThrough('App\Course','App\Department');
+    }
 }
