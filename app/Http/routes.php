@@ -27,7 +27,20 @@ Route::group(['middleware' => ['web']], function () {
     /**
      * Add New Task
      */
-    Route::post('/task', function (Request $request) {
+
+
+    Route::get('about', 'PagesController@about');
+    Route::get('contact', 'PagesController@contact');
+
+    Route::get('profile', 'profileController@index');
+    Route::get('profile/{id}', 'profileController@show');
+
+    Route::get('req', 'RequestController@create');
+    Route::post('req', 'RequestController@store');
+
+
+
+    Route::post('/task', function (Request $request)    {
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
         ]);
