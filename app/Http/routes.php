@@ -25,7 +25,7 @@
 Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', function () {
-        
+
         return view('welcome');
     })->middleware('guest');
 
@@ -49,6 +49,15 @@ Route::group(['middleware' => ['web']], function () {
     //profile page
     Route::get('/doneworks}','profile@doneworks');
     Route::get('/activeworks}','profile@activeworks');
+
+
+    //Amir Routes
+    Route::get('/userWorks','TaskController@userWorks');
+    Route::get('/addwork','TaskController@useraddworks');
+    Route::post('addthework','TaskController@addthework');
+    Route::get('departments','TaskController@Departments');
+    Route::get('home','TaskController@home');
+
 
     /*
      * blade file:

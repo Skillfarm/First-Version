@@ -23,4 +23,8 @@ class Work extends Model
     {
         return $this->hasMany('App\Acceptance');
     }
+    public function department(){
+        return $this->belongsTo('App\Department');
+    }
+
 }

@@ -15,8 +15,13 @@ class Department extends Model
         return $this->hasMany('App\Course');
     }
 
-    public function  works()
+    public function work()
+    {
+        return $this->hasMany('App\Work');
+    }
+
+   /* public function  works()
     {
         return $this->hasManyThrough('App\Course','App\Work');
-    }
+    }*/
 }

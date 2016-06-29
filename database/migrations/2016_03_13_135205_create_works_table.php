@@ -28,6 +28,16 @@ class CreateWorksTable extends Migration
                 ->references('id')
                 ->on('courses')
                 ->onDelete('cascade');
+            $table->integer('department_id')->index();
+            $table->foreign('department_id')
+                ->references('id')
+                ->on('departments')
+                ->onDelete('cascade');
+            $table->integer('dep_id2')->index();
+            $table->foreign('dep_id2')
+                ->references('id')
+                ->on('departments')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
