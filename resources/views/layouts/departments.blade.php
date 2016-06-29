@@ -18,7 +18,7 @@
             <div class="">
                 @foreach($departments as $department)
                 <ul class="nav nav-pills nav-stacked">
-                   <li><a class="amir"  data-amir="{{$department->id}}"><span class="glyphicon glyphicon-chevron-right"></span> {{$department->name}}</a>
+                   <li><a href="#" class="amir"  data-amir="{{$department->id}}"><span class="glyphicon glyphicon-chevron-right"></span> {{$department->name}}</a>
                     </li>
                 </ul>
                 @endforeach
