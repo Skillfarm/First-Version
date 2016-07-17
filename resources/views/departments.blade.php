@@ -182,13 +182,13 @@
                         <img class="img-circle img-responsive" src="{{ URL::to('/') }}/images/amir.png">
                     </td>
                     <td class="col-md-2">
-                        alaki
+                        {{$var->title}}
                     </td>
                     <td class="col-md-2">
-                        alaki
+                        {{$var->due_date}}
                     </td>
                     <td class="col-md-6">
-                        alaki
+                        {{$var->description}}
                     </td>
                 </tr>
 
