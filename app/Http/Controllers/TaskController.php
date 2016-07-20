@@ -29,6 +29,7 @@ class TaskController extends Controller
      * @param  TaskRepository  $tasks
      * @return void
      */
+
     public function __construct(TaskRepository $tasks)
     {
         $this->middleware('auth');
@@ -150,4 +151,5 @@ class TaskController extends Controller
     public function home(Request $request){
         return view('layouts.homepage');
     }
+    
 }

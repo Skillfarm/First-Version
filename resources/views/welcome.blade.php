@@ -8,10 +8,25 @@
                 <div class="panel-heading">Welcome</div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page.
+
+                    {{--zeinab  change--}}
+                    <h1>Departments</h1>
+
+                    @foreach($departments as $department)
+
+                        <article>
+                            <h2>
+                                <a href="/department/{{$department->id}}">{{ $department->name }}</a>
+                            </h2>
+                        </article>
+
+                    @endforeach
+                    {{--Your Application's Landing Page.--}}
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection

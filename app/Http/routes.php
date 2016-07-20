@@ -24,11 +24,15 @@
 
 Route::group(['middleware' => ['web']], function () {
 
-    Route::get('/', function () {
+//    Route::get('/', function () {
+//
+//        return view('welcome');
+//    })->middleware('guest');
 
-        return view('welcome');
-    })->middleware('guest');
-
+    
+    //zeinab welcome
+    Route::get('/', 'base@department')->middleware('guest');
+    
     Route::get('/tasks', 'TaskController@index');
     Route::post('/task', 'TaskController@store');
     Route::delete('/task/{task}', 'TaskController@destroy');
@@ -36,28 +40,34 @@ Route::group(['middleware' => ['web']], function () {
 
     //Route::get('/');
     ///homepage
-    Route::get('/department/{department}','base@getdeptpage');//TO DO
-    Route::get('/course/{course}','base@getcoursepage');//TO DO
-    Route::get('/addwork','work@getaddworkpage');//TO DO
+    //zeinab
+    Route::get('/department/{departmenid}','base@getdeptpage');//TO DO
+    Route::get('/course/{courseid}','base@getcoursepage');//TO DO
+    //Mohsen: Route::get('/department/{department}','base@getdeptpage');//TO DO
+    //Route::get('/course/{course}','base@getcoursepage');//TO DO
+    Route::get('/addwork','WorkController@getaddworkpage');//TO DO
     //dep or course
-    Route::get('/work/{workid}','work@getworkpage');//
+    Route::get('/work/{workid}','WorkController@getworkpage');//
     Route::post('/profile/','profile@getprofilepage');
     //add work
-    Route::post('/addwork','work@addwork');
+    Route::post('/addwork','WorkController@addwork');
     //work page
-    Route::post('/addacceptance','work@addacceptance');
+    Route::post('/addacceptance','WorkController@addacceptance');
     //profile page
     Route::get('/doneworks}','profile@doneworks');
     Route::get('/activeworks}','profile@activeworks');
 
 
     //Amir Routes
-    Route::get('/userWorks','TaskController@userWorks');
-    Route::get('/addwork','TaskController@useraddworks');
-    Route::post('addthework','TaskController@addthework');
-    Route::get('departments','TaskController@Departments');
-    Route::get('home','TaskController@home');
+//    Route::get('/userWorks','TaskController@userWorks');
+//    Route::get('/addwork','TaskController@useraddworks');
+//    Route::post('addthework','TaskController@addthework');
+//    Route::get('departments','TaskController@Departments');
+//    Route::get('home','TaskController@home');
 
+    
+    //Zeinab Routes
+    Route::get('/aboutUs', 'base@about');
 
     /*
      * blade file:
