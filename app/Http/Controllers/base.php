@@ -25,6 +25,7 @@ class base extends Controller
 
     public function getdeptpage($dpid){
 
+        //return \Auth::user()->name;
         $department = Department::findOrFail($dpid);
         $courses = Course::where('department_id', '=', $dpid)->get();
         $works = Work::where('department_id', '=', $dpid)->latest()->get();

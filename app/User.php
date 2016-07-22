@@ -28,14 +28,23 @@ class User extends Authenticatable
     /**
      * Get all of the tasks for the user.
      */
+
+    //A user can have many tasks, works, and acceptance
+    //zeinab
+    public function works()
+    {
+        return $this->hasMany('App\Work');
+    }
+
+    //not mine!
     public function tasks()
     {
         return $this->hasMany(Task::class);
     }
-    public function works()
-    {
-        return $this->hasMany(Work::class);
-    }
+//    public function works()
+//    {
+//        return $this->hasMany(Work::class);
+//    }
     public function acceptance()
     {
         return $this->hasMany(Acceptance::class);

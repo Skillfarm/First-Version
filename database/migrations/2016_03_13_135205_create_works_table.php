@@ -18,6 +18,7 @@ class CreateWorksTable extends Migration
             $table->text('detail');
             $table->string('status');
             $table->dateTime('dead_time');
+            //$table->integer('user_id')->unsigned(); //zeinab
             $table->integer('user_id')->index();
             $table->foreign('user_id')
                 ->references('id')

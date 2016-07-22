@@ -98,11 +98,28 @@
         </div>
     </nav>
 
+
+    <div class="container">
+        @include('flash::message')
+        {{--@include('partials.flash') flash1 and 2--}}
+    </div>
+
+
     @yield('content')
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    {{--new zeinab for flash--}}
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    {{--hide a flash message if it's not important--}}
+    <script>
+        //$('#flash-overlay-modal').modal();//overlay flash
+        $('div.alert').not('.alert-important').delay(3000).slideUp(300)
+    </script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

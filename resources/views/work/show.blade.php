@@ -1,3 +1,4 @@
+{{--show details about a specific work--}}
 @extends('layouts.app')
 
 @section('content')
@@ -14,6 +15,17 @@
                         <br><br><br>
                         <h3>Work dead time:</h3>
                         <h4>{{ $work->dead_time->addDays(8)->diffForHumans() }}</h4>
+
+                        @unless($work->labels->isEmpty())
+                            <br><br><br>
+                            <h3>Tags:</h3>
+                            <ul>
+                                @foreach($work->labels as $label)
+                                    <li>{{$label->name}}</li>
+                                @endforeach
+                            </ul>
+                        @endunless
+
                     </div>
                 </div>
             </div>

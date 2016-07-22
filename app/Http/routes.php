@@ -31,8 +31,9 @@ Route::group(['middleware' => ['web']], function () {
 
     
     //zeinab welcome
-    Route::get('/', 'base@department')->middleware('guest');
-    
+    //Route::get('/', 'base@department')->middleware('guest');//Done ino baadan residegi mikonam :D
+    Route::get('/', 'base@department');//Done
+
     Route::get('/tasks', 'TaskController@index');
     Route::post('/task', 'TaskController@store');
     Route::delete('/task/{task}', 'TaskController@destroy');
@@ -41,22 +42,25 @@ Route::group(['middleware' => ['web']], function () {
     //Route::get('/');
     ///homepage
     //zeinab
-    Route::get('/department/{departmenid}','base@getdeptpage');//TO DO
-    Route::get('/course/{courseid}','base@getcoursepage');//TO DO
-    //Mohsen: Route::get('/department/{department}','base@getdeptpage');//TO DO
-    //Route::get('/course/{course}','base@getcoursepage');//TO DO
-    Route::get('/addwork','WorkController@getaddworkpage');//TO DO
+    Route::get('/department/{departmenid}','base@getdeptpage');//Done
+    Route::get('/course/{courseid}','base@getcoursepage');//Done
+    //Mohsen: Route::get('/department/{department}','base@getdeptpage');
+    //Route::get('/course/{course}','base@getcoursepage');
+    //Route::get('/addwork','WorkController@getaddworkpage');//Done
     //dep or course
-    Route::get('/work/{workid}','WorkController@getworkpage');//
+    //Route::get('/work/{workid}','WorkController@getworkpage');//Done
     Route::post('/profile/','profile@getprofilepage');
     //add work
-    Route::post('/addwork','WorkController@addwork');
+    //Route::post('/addwork','WorkController@addwork');//Done
     //work page
     Route::post('/addacceptance','WorkController@addacceptance');
     //profile page
     Route::get('/doneworks}','profile@doneworks');
     Route::get('/activeworks}','profile@activeworks');
 
+    //new
+    Route::resource('work', 'WorkController');
+    Route::get('/{username}/works', 'profile@userWorks');
 
     //Amir Routes
 //    Route::get('/userWorks','TaskController@userWorks');
