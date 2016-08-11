@@ -32,6 +32,55 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/task', 'TaskController@store');
     Route::delete('/task/{task}', 'TaskController@destroy');
 
-    Route::auth();
 
+
+    /* Mohsen Part
+     *
+     * Start every address using the first word of your name means 'm'
+     * */
+
+    Route::auth();
+    Route::get('/mvworks', 'Mohsen@somefunction');
+
+    //End
+
+
+
+
+
+
+    /* AmirHossein Part
+     *
+     * Start every address using the first word of your name means 'a'
+     * */
+
+    Route::get('/aprocess', 'AmirHossein@somefunction');
+    //End
+
+
+
+
+
+
+    /* Sara Part
+     *
+     * Start every address using the first word of your name means 's'
+     * */
+
+    Route::get('/sprofile', 'Sara@somefunction');
+    //End
+
+
+
+
+
+
+    /* Zeinab Part
+     *
+     * Start every address using the first word of your name means 'z'
+     * */
+
+    Route::get('/zprofile', 'Zeinab@somefunction');
+
+    //End
 });
