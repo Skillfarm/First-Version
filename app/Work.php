@@ -44,14 +44,14 @@ class Work extends Model {
 		return $this->belongsToMany('App\Ambiguity', 'ambiguity_user_work')->withPivot('user_id')->withTimestamps();
 	}
 
-	public function opnions()
+	public function opinions()
 	{
-		return $this->belongsToMany('App\Opinion', 'opnion_user_work')->withPivot('user_id')->withTimestamps();
+		return $this->belongsToMany('App\Opinion', 'opinion_user_work')->withPivot('user_id')->withTimestamps();
 	}
 
-	public function opnions_users()
+	public function opinions_users()
 	{
-		return $this->belongsToMany('App\User', 'opnion_user_work')->withPivot('opnion_id')->withTimestamps();
+		return $this->belongsToMany('App\User', 'opinion_user_work')->withPivot('opinion_id')->withTimestamps();
 	}
 
 	public function tags()

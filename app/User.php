@@ -57,14 +57,14 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Ambiguity', 'ambiguity_user_work')->withPivot('work_id')->withTimestamps();
     }
 
-    public function opnion4me_works()
+    public function opinion4me_works()
     {
-        return $this->belongsToMany('App\Work', 'opnion_user_work')->withPivot('opnion_id')->withTimestamps();
+        return $this->belongsToMany('App\Work', 'opinion_user_work')->withPivot('opinion_id')->withTimestamps();
     }
 
-    public function opnions4me()
+    public function opinions4me()
     {
-        return $this->belongsToMany('App\Opinion', 'opnion_user_work')->withPivot('work_id')->withTimestamps();
+        return $this->belongsToMany('App\Opinion', 'opinion_user_work')->withPivot('work_id')->withTimestamps();
     }
 
     public function favorite_fields()
