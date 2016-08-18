@@ -41,14 +41,11 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::auth();
     Route::get('/mvworks', 'Mohsen@somefunction');
-
+    Route::get('/mContents','Mohsen@getContentspage');
+    Route::get('/mtest','Mohsen@testdb');
+    Route::get('/mbranchworks/{branch}','Mohsen@branchworkspage');
+    Route::get('/mfieldworks/{field}','Mohsen@fieldworkspage');
     //End
-
-
-
-
-
-
     /* AmirHossein Part
      *
      * Start every address using the first word of your name means 'a'
