@@ -1,8 +1,10 @@
 <?php
 
+namespace App;
 
+use Illuminate\Database\Eloquent\Model;
 
-class Accepted extends Eloquent {
+class Accepted extends model {
 
 	protected $table = 'accepteds';
 	public $timestamps = true;

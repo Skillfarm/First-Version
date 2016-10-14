@@ -14,6 +14,10 @@ class Work extends Model {
 	protected $dates = ['deleted_at'];
 	protected $fillable = array('subject', 'details', 'deadtime', 'filename', 'wage', 'status');
 
+	public function nazar(){
+		return $this->hasMany(Work::class);
+	}
+
 	public function accepteds_users()
 	{
 		return $this->belongsToMany('App\User', 'accepteds')->withTimestamps();
@@ -58,5 +62,4 @@ class Work extends Model {
 	{
 		return $this->belongsToMany('App\Tag', 'tag_work')->withTimestamps();
 	}
-
 }

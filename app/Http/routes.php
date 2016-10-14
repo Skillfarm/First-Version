@@ -46,15 +46,46 @@ Route::group(['middleware' => ['web']], function () {
 
 
 
-
-
-
     /* AmirHossein Part
      *
      * Start every address using the first word of your name means 'a'
      * */
 
     Route::get('/aprocess', 'AmirHossein@somefunction');
+
+    //Add Work
+    Route::get('Aaddwork', 'AmirHossein@addwork');
+    Route::post('Aworkadd', 'AmirHossein@newwork');
+
+    //Edit Work
+    Route::post('Aeditwork', 'AmirHossein@editwork');
+    Route::post('Aedited/{work}', 'AmirHossein@edited');
+
+    //Work Page
+    Route::get('Ashowwork', 'AmirHossein@showwork');
+
+    //Work Page for The Owner
+    Route::get('AshowworkO', 'AmirHossein@showWO');
+
+    //work
+    Route::post('Anewapplicant', 'AmirHossein@newapplicant');
+
+    //ambiguity
+    Route::post('Anewambiguity', 'AmirHossein@Addamiguity');
+    Route::post('Aignoreambig/{nazar}', 'AmirHossein@ignore');
+    Route::post('Aremoveambig/{nazar}', 'AmirHossein@remove');
+
+    //deactivation
+    Route::post('deactivate', 'AmirHossein@deactivate');
+
+    //Applicants View
+    Route::get('Aapplicants', 'AmirHossein@getApplicants');
+
+    //Accept Someone
+    Route::post('Aaccept/{user}', 'AmirHossein@accept');
+
+
+
     //End
 
 

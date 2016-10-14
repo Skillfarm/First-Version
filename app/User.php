@@ -2,7 +2,6 @@
 
 namespace App;
 
-use App\Task;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -32,6 +31,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Task::class);
     }
+
+    public function nazar(){
+        return $this->hasMany(Nazar::class);
+    }
+
     public function accepteds_works()
     {
         return $this->belongsToMany('App\Work', 'accepteds')->withTimestamps();

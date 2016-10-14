@@ -1,8 +1,11 @@
 <?php
 
 
+namespace App;
 
-class Applicant extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
+
+class Applicant extends model {
 
 	protected $table = 'applicants';
 	public $timestamps = true;

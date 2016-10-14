@@ -48,9 +48,14 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'work'=>[
+            'driver'=>'local',
+            'root'=>public_path('AmirHossein/app'),
+        ],
+
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
+            'root' => storage_path('app'),
             'visibility' => 'public',
         ],
 
