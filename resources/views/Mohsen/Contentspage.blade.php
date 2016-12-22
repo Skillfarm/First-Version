@@ -32,7 +32,7 @@ $br= App\Branch::with('fields')->get();
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
-        <div class="col-md-3 left_col">
+        <div class="col-md-3 left_col" style="width: 0">
           <!--<div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
               <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
@@ -154,11 +154,11 @@ $br= App\Branch::with('fields')->get();
         <!-- /top navigation -->
 
         <!-- page content -->
-        <div class="right_col" role="main">
+        <div class="right_col" role="main" style="margin: 0 auto">
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Plain Page</h3>
+                <h3>فهرست کلی</h3>
               </div>
 
               <div class="title_right">
@@ -177,15 +177,15 @@ $br= App\Branch::with('fields')->get();
 
             <div class="row">
 @foreach($br as $branch)
-              <div class="col-md-4 col-sm-4 col-xs-4">
-                <div class="x_panel">
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="x_panel" style="text-align: right;">
                   <div class="x_title">
-                   <a class="title" href="#"> <h2>{{ $branch->name}}</h2></a>
+                   <a class="title" href="#"> <h2 style="float: right;">{{ $branch->name}}</h2></a>
                     
                     <div class="clearfix"></div>
                   </div>
                   @foreach ($branch->fields as $field)
-                <a href="#">  <div class="x_content">
+                <a href="/mfieldworks/{{$field->id}}">  <div class="x_content">
                      {{$field->name}}
                   </div> </a>
                    @endforeach
@@ -199,7 +199,7 @@ $br= App\Branch::with('fields')->get();
         <!-- /page content -->
 
         <!-- footer content -->
-        <footer>
+        <footer style="margin-left: 0">
           <div class="pull-right">
             Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
           </div>

@@ -24,11 +24,10 @@
   </head>
 
   <body class="login">
-<button class="btn btn-default source" onclick="new PNotify({&#10;                                  title: 'Sticky Danger',&#10;                                  text: 'Sticky Danger... I\'m not even gonna make a joke.',&#10;                                  type: 'error',&#10;                                  hide: false,&#10;                                  styling: 'bootstrap3'&#10;                              });">Error</button>
-@foreach ($errors->all() as $message) 
+@foreach ($errors->all() as $message)
     <div class="alert alert-danger" align="right">
 
-  <strong>!!!!!!خطا  </strong>
+  <strong>  داداچ داری اشتباه میزنی </strong>
 </div>
 @endforeach
 
@@ -71,7 +70,7 @@
                 <p class="change_link">
                   <a href="#signup" class="to_register">ساخت اکانت </a>
                 </p>
-
+<!--
                 <div class="clearfix"></div>
                 <br />
 
@@ -80,6 +79,7 @@
                   <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
                 </div>
               </div>
+    -->
             </form>
           </section>
         </div>
@@ -124,7 +124,7 @@
                 <p class="change_link"> 
                   <a href="#signin" class="to_register">ورود </a>
                 </p>
-
+<!--
                 <div class="clearfix"></div>
                 <br />
 
@@ -133,6 +133,7 @@
                   <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
                 </div>
               </div>
+    -->
             </form>
           </section>
         </div>

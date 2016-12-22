@@ -45,6 +45,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/mtest','Mohsen@testdb');
     Route::get('/mbranchworks/{branch}','Mohsen@branchworkspage');
     Route::get('/mfieldworks/{field}','Mohsen@fieldworkspage');
+    Route::get('/majax','Mohsen@ajaxview');
+    Route::post('/majaxp','Mohsen@ajax');
     //End
     /* AmirHossein Part
      *

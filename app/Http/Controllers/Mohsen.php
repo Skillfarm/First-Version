@@ -14,6 +14,16 @@ public function getContentspage()
 {
 	return view ('Mohsen.Contentspage');
 }
+public function ajaxview()
+{
+	return view ('Mohsen.ajax');
+}
+public function ajax()
+{
+	  $msg = "This is a simple message.";
+	  
+      return response()->json(array('msg'=> $msg), 200);
+}
 public function testdb ()
 {
 	/*for ($j=0;$j<6;$j++)
@@ -31,25 +41,49 @@ public function testdb ()
 	$f->branchs()->save($br);
 	}}
 	*/
-
-
-
+	/*
 $br= App\Branch::with('fields')->get();
-
 dd ($br[3]->fields);
+return $br;
 
+	*/
+/*
+$work=new App\Work;
+	$work->subject="sub5";
+	$work->save();
 
+$branch = App\Field::all()->first();
+	$branch->works()->attach($work);
+*/
 
-	return $br;
+	$f=new App\Field ;
+	$f -> name= "field name";
+	$f ->save();
+	$br= App\Branch::all()->first();
+	$br->fields()->attach($f);
 }
 
-public function fieldworkspage(Field $f)
+public function fieldworkspage(App\Field $field)
 {
+	$works= $field->works()->paginate(3);
 
+	$branch=$field->branchs()->get()->first();
+	//$branch = App\Branch::all()->find(1);
+	return view('Mohsen/viewworks',['works'=>$works ,'branch'=>$branch]);
 }
 
-public function branchworkspage(Branch  $b)
+public function branchworkspage(App\Branch  $branch)
 {
-	
+	$fields= $branch->fields()->with('works')->get();
+	$works = collect();
+	foreach($fields as $field)
+	{
+		$works->push($field->Works);
+
+	}
+
+
+	return view('Mohsen/viewworks',['works'=>$works ,'branch'=>$branch]);
+
 }
 }
